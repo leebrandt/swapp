@@ -1,0 +1,10 @@
+<ul *ngFor="let film of films | async" >
+  <li [class.empire-wins]="film.winner === 'Empire'">
+    <a [routerLink]="['/films', film.id]">{{film.title}}</a>
+  </li>
+</ul>
+
+<div *ngIf="selectedFilm">
+  <div><input type="text" [(ngModel)]="selectedFilm.title"></div>
+  <span [innerHtml]="selectedFilm.release_year"></span>
+</div>
